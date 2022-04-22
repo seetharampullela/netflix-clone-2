@@ -1,5 +1,4 @@
 import {Component} from 'react'
-import Cookies from 'js-cookie'
 import Header from '../Header'
 import Trending from '../Trending'
 
@@ -10,27 +9,11 @@ import LoadingElement from '../LoaderElement'
 import Originals from '../Originals'
 
 
-const apiConstants = {
-  initial: 'INITIAL',
-  inProgress: 'INPROGRESS',
-  success: 'SUCCESS',
-  failure: 'FAILURE',
-}
-
 class Home extends Component {
-  state = {
-    apiStatus: apiConstants.initial,
-    allTrendingVideos: [],
-  }
-
-
 
   render() {
     const renderSuccessView = () => {
-      const {allTrendingVideos} = this.state
-
       const backgroundImage = "https://res.cloudinary.com/dtjcxf7z5/image/upload/v1650251824/Mini%20Project%20Netflix%20Clone/Superman_gjemba.png"
-      
 
       return (
         <div
