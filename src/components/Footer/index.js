@@ -18,7 +18,6 @@ const Footer = () => (
             <FaInstagram size={30} className="footer-icon" />
           </div>
           <p className="contact-heading">Contact us</p>
-          <h1 className="watermark">Developed by P.S.S.Pavan Kumar</h1>
         </div>
       )
     }}
