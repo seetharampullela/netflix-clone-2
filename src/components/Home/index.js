@@ -8,7 +8,7 @@ import MovieContext from '../../context/MovieContext'
 import Footer from '../Footer'
 import LoadingElement from '../LoaderElement'
 import Originals from '../Originals'
-import TopRated from '../TopRated'
+
 
 const apiConstants = {
   initial: 'INITIAL',
@@ -104,8 +104,7 @@ class Home extends Component {
                 {getResult()}
                 <h1 className="trending-heading">Trending Now</h1>
                 <Trending />
-                <h1 className="trending-heading">Top Rated</h1>
-                <TopRated />
+                
                 <h1 className="trending-heading">Originals</h1>
                 <Originals />
               </div>
