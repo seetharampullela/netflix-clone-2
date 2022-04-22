@@ -23,53 +23,14 @@ class Home extends Component {
     allTrendingVideos: [],
   }
 
-  componentDidMount() {
-    this.getAllVideos()
-  }
 
-  getAllVideos = async () => {
-    this.setState({apiStatus: apiConstants.inProgress})
-
-    const url = 'https://apis.ccbp.in/movies-app/originals'
-    const jwtToken = Cookies.get('jwt_token')
-    const options = {
-      method: 'GET',
-      headers: {
-        Authorization: `Bearer ${jwtToken}`,
-      },
-    }
-
-    const response = await fetch(url, options)
-    if (response.ok) {
-      const data = await response.json()
-
-      const updatedVideosList = data.results.map(each => ({
-        id: each.id,
-        backdropPath: each.backdrop_path,
-        overview: each.overview,
-        posterPath: each.poster_path,
-        title: each.title,
-      }))
-
-      this.setState({
-        apiStatus: apiConstants.success,
-        allTrendingVideos: updatedVideosList,
-      })
-    } else {
-      this.setState({apiStatus: apiConstants.failure})
-    }
-  }
 
   render() {
     const renderSuccessView = () => {
       const {allTrendingVideos} = this.state
 
-      const homeHeaderItem =
-        allTrendingVideos[Math.floor(Math.random() * allTrendingVideos.length)]
-
-      const backgroundImage = homeHeaderItem.backdropPath
-      const titleOfHeader = homeHeaderItem.title
-      const overviewOfHeader = homeHeaderItem.overview
+      const backgroundImage = "https://res.cloudinary.com/dtjcxf7z5/image/upload/v1650251824/Mini%20Project%20Netflix%20Clone/Superman_gjemba.png"
+      
 
       return (
         <div
@@ -82,8 +43,8 @@ class Home extends Component {
         >
           <Header />
           <div className="home-header-content">
-            <h1 className="movie-details-name">{titleOfHeader}</h1>
-            <p className="movie-details-description">{overviewOfHeader}</p>
+            <h1 className="movie-details-name">Man of Steel</h1>
+            <p className="movie-details-description">Man of steel from superman franchise directed by Zack Snyder</p>
             <button type="button" className="movies-details-play-button">
               Play
             </button>
