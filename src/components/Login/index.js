@@ -120,7 +120,6 @@ class Login extends Component {
                   Login
                 </button>
               </form>
-              <h1 className="watermark">Developed by P.S.S.Pavan Kumar</h1>
             </div>
           )
         }}
